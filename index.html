@@ -1,106 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLAIN-ECOM</title>
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<link rel="stylesheet" src="css/cart.css">
-</head>
-<body>
+<html>
+  <head>
+    <title>Plain-Ecom</title>
+    <link rel="stylesheet" href="cart.css">
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+  </head>
+  <body>
+    <h1>our products</h1>
+    
+    <!-- (A) CART -->
 
-    <h1 class="pt-5 text-center font-monospace">
-        SELECT YOUR PRODUCTS
-    </h1>
+    <div id="cart-wrap">
+  
+      <!-- (A1) PRODUCTS LIST -->
+      <div id="cart-products"></div>
 
-    <div class="container pt-4 w-auto p-3 mh-100">
-        <div class="row text-center">
-            <div class="col-8">
-                <h2 class="display-6"> Select Laptop</h2>
-                <div class="card-group">
-                <div class="card " style="width: 18rem;">
-                    <img class="card-img-top h-100 border border-primary" src="img/Hp-pavilion-x360-14.png" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Hp-pavilion-x360-14-hd-16GB RAM</h4>
-                        <P class="card-text">at 1.2M UGX</P>
-                        <a href="#" class="btn btn-primary">ADD TO CART</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top h-100 border border-primary" src="img/Megatron-ll-laptop-blue-hd.png" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Megatron-ll-laptop-blue-hd</h4>
-                        <P class="card-text"> at 1.5M UGX</P>
-                        <a href="#" class="btn btn-primary">ADD TO CART</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top h-100 border border-primary" src="img/Razer-triple-screen-laptop-hd.png" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Razer-triple-screen-laptop-hd</h4>
-                        <P class="card-text">at 1.8M UGX</P>
-                        <a href="#" class="btn btn-primary">ADD TO CART</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top h-100 border border-primary" src="img/Asus-laptop-touch-screen-hd.png" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Asus-laptop-touch-screen-hd</h4>
-                        <P class="card-text"> at 1.6M UGX</P>
-                        <a href="#" class="btn btn-primary">ADD TO CART</a>
-                    </div>
-                </div>
-            </div>
-            <h2 class="display-6">Select Car & Motocycle</h2>
-            <div class="card-group">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top h-100 border border-primary" src="img/moto.png" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Black Sport Moto</h4>
-                        <P class="card-text"> at 5,000$</P>
-                        <a href="#" class="btn btn-primary">ADD TO CART</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top h-100 border border-primary" src="img/moto brown.png" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Brown Sport Moto</h4>
-                        <P class="card-text"> at 5,000$</P>
-                        <a href="#" class="btn btn-primary">ADD TO CART</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top h-100 border border-primary" src="img/Geneva Motor.png" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Toyota C HR Grey Car</h4>
-                        <P class="card-text">at 5,000$</P>
-                        <a href="#" class="btn btn-primary">ADD TO CART</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-
-                    <img class="card-img-top h-100 border border-primary" src="img/brown.png" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Land Rover Range Rover</h4>
-                        <P class="card-text"> at 5,000$</P>
-                        <a href="#" class="btn btn-primary">ADD TO CART</a>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="col-4 border border-success p-2 border-opacity-10">
-                <h2> CART HERE.</h2>
-                 <img class="card-img-top h-50" src="img/PIC1.png" alt="">
-
-
-            </div>
-        </div>
-        <div class="row text-center ">
-            <p>DESIGNED BY OPEN SOURCE STUDENTS.</p>
-        </div>
+      <!-- (A2) CURRENT CART ITEMS -->
+      <div id="cart-items"> 
+        <h1>cart</h1>
+      </div>
     </div>
-    <script src="js/cart.js"></script>
-</body>
+
+    <!-- (B) TEMPLATES -->
+    <!-- (B1) PRODUCT CELL -->
+
+    <template id="template-product">    
+    <div class="p-item">
+      <img class="p-img"/>
+      <div class="p-name"></div>
+      <div class="p-desc"></div>
+      <div class="p-price"></div>
+      <button class="cart p-add">Add To Cart</button>
+    </div>
+    </template>
+
+
+  </body>
 </html>
